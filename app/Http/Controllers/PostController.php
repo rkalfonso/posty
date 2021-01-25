@@ -9,7 +9,12 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('posts.index');
+        $posts = Post::latest()->with(['user', 'likes'])->paginate(20);
+
+        // dd($posts);
+        return view('posts.index', [
+            'posts' => $posts
+        ]);
     }
 
     public function store(Request $request)
@@ -18,9 +23,19 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
-        Post::create([
-            'user_id' => auth()->id(),
-            'body' => $request->body
-        ]);
+       $request->user()->posts()->create($request->only('body'));
+
+       return back();
+
+    }
+
+    public function destroy(Post $post)
+    {
+        if (!$post->ownedBy(auth()->user())){
+            dd('no');
+        }
+        $post->delete();
+
+        return back();
     }
 }
