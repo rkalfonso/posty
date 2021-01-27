@@ -2,7 +2,8 @@
 SQLyog Ultimate v10.00 Beta1
 MySQL - 5.5.5-10.4.6-MariaDB : Database - posty
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -22,7 +23,7 @@ USE `posty`;
 
 /*Data for the table `migrations` */
 
-insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2021_01_24_121243_add_username_to_users_table',1),(5,'2021_01_24_155002_create_posts_table',1),(6,'2021_01_25_025515_create_likes_table',2);
+--insert  into `migrations`(`id`,`migration`,`batch`) values (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2021_01_24_121243_add_username_to_users_table',1),(5,'2021_01_24_155002_create_posts_table',1),(6,'2021_01_25_025515_create_likes_table',2);
 
 /*Data for the table `password_resets` */
 
